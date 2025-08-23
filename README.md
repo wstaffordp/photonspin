@@ -14,15 +14,17 @@ PhotonSpin is a PRNG that outperforms SHISHUA as the fastest large-period, stati
 
 PhotonSpin64 provides enhanced parallelism, period and speed with similar statistical test results as an ideal alternative to SHISHUA.
 
-It has a period of at least 2¹⁰²⁴. Up to 2⁶⁴ parallel instances each have a non-overlapping period of at least 2⁶⁴ by seeding `a` with non-overlapping integers and seeding the remaining state with overlapping integers. The first result of 20 integers from each parallel instance should be skipped.
+It has a period of at least 2¹⁰²⁴.
+
+Each state integer must be assigned a seed. Seeding `a` with non-overlapping integers and seeding the remaining state with overlapping integers behaves as a jump function with up to 2⁶⁴ parallel instances that each have a non-overlapping period of at least 2⁶⁴. The first result of 20 integers from each parallel instance should be skipped.
 
 ##### C
 
-`photonspin64` generates and assigns 20 pseudorandom `uint64_t` integers to `elements`, provided the implementation supports a 64-bit, unsigned integral type for `uint64_t`. Each `uint64_t` integer from each `struct photonspin64_s` instance must be assigned a seed.
+`photonspin64` generates and assigns 20 pseudorandom `uint64_t` integers to `elements`, provided the implementation supports a 64-bit, unsigned integral type for `uint64_t`.
 
 ##### C#
 
-`Next` from `PhotonSpin64` generates and assigns 20 pseudorandom `ulong` integers to `elements`. Each `ulong` integer from each `PhotonSpin64` instance must be assigned a seed.
+`Next` from `PhotonSpin64` generates and assigns 20 pseudorandom `ulong` integers to `elements`.
 
 ---
 
@@ -30,12 +32,14 @@ It has a period of at least 2¹⁰²⁴. Up to 2⁶⁴ parallel instances each h
 
 PhotonSpin32 provides enhanced parallelism, period and speed with similar statistical test results as an ideal alternative to 32-bit variants of SHISHUA.
 
-It has a period of at least 2⁵¹². Up to 2³² parallel instances each have a non-overlapping period of at least 2³² by seeding `a` with non-overlapping integers and seeding the remaining state with overlapping integers. The first result of 20 integers from each parallel instance should be skipped.
+It has a period of at least 2⁵¹².
+
+Each state integer must be assigned a seed. Seeding `a` with non-overlapping integers and seeding the remaining state with overlapping integers behaves as a jump function with up to 2³² parallel instances that each have a non-overlapping period of at least 2³². The first result of 20 integers from each parallel instance should be skipped.
 
 ##### C
 
-`photonspin32` generates and assigns 20 pseudorandom `uint32_t` integers to `elements`, provided the implementation supports a 32-bit, unsigned integral type for `uint32_t`. Each `uint32_t` integer from each `struct photonspin32_s` instance must be assigned a seed.
+`photonspin32` generates and assigns 20 pseudorandom `uint32_t` integers to `elements`, provided the implementation supports a 32-bit, unsigned integral type for `uint32_t`.
 
 ##### C#
 
-`Next` from `PhotonSpin32` generates and assigns 20 pseudorandom `uint` integers to `elements`. Each `uint` integer from each `PhotonSpin32` instance must be assigned a seed.
+`Next` from `PhotonSpin32` generates and assigns 20 pseudorandom `uint` integers to `elements`.
